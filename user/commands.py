@@ -1,9 +1,10 @@
-import click
 import secrets
 from getpass import getpass
+import click
 from user import app
 from user.models import User
 from database import db_session
+from utils import datetime_as_string
 
 @app.cli.command('create')
 @click.argument('username')
@@ -43,8 +44,8 @@ def list_user():
         print(row_format.format(
             user.id,
             user.username,
-            str(user.date_joined.strftime("%d/%m/%Y %H:%M:%S") if user.date_joined else user.date_joined),
-            str(user.last_login.strftime("%d/%m/%Y %H:%M:%S") if user.last_login else user.last_login),
+            str(datetime_as_string(user.date_joined) or user.date_joined),
+            str(datetime_as_string(user.last_login) or user.last_login),
             str(user.is_active),
             str(user.is_admin)
         ))

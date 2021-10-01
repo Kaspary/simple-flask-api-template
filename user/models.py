@@ -32,7 +32,7 @@ class User(BaseModel):
     def validate_username(self, key, username):
         assert username, 'No username provided'
         assert User.query.filter_by(username=username).first() is None, 'Username is already in use'
-        assert len(username) > 3 and len(username) < 32, 'Username must be between 3 and 32 characters'
+        assert len(username)>3 and len(username)<32, 'Username must be between 3 and 32 characters'
         return username
 
     def set_password(self, password):

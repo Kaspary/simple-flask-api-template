@@ -21,10 +21,10 @@ BaseModel.query = db_session.query_property()
 
 @event.listens_for(Engine, "connect")
 def set_sqlite_pragma(dbapi_connection, connection_record):
-    if type(dbapi_connection) is sqlite3.Connection:
-       cursor = dbapi_connection.cursor()
-       cursor.execute("PRAGMA journal_mode=wal")
-       cursor.close()
+    if isinstance(dbapi_connection, sqlite3.Connection):
+        cursor = dbapi_connection.cursor()
+        cursor.execute("PRAGMA journal_mode=wal")
+        cursor.close()
 
 @current_app.teardown_appcontext
 def shutdown_session(exception=None):
