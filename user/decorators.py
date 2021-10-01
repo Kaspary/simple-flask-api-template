@@ -2,6 +2,7 @@ from functools import wraps
 from flask import jsonify
 from flask_jwt import current_identity
 
+
 def admin_required(fn):
     @wraps(fn)
     def wrapper(*args, **kwargs):

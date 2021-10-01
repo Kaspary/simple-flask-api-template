@@ -1,6 +1,7 @@
 from datetime import timedelta
 from decouple import config
 
+
 class Config:
     SERVER_NAME = config('SERVER_NAME')
     FLASK_APP = 'wsgi.py'

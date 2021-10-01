@@ -5,6 +5,7 @@ from user.models import User
 from user.decorators import admin_required, is_self_or_admin
 from database import db_session
 
+
 @app.route('', methods=['POST'])
 def new_user():
     username = request.json.get('username')

@@ -2,6 +2,7 @@ from flask import Flask
 from flask_jwt import JWT
 from config import Config
 
+
 def register_apps(app):
     import core
     import user
@@ -10,12 +11,15 @@ def register_apps(app):
     app.register_blueprint(user.app)
     app.register_blueprint(documentation.app)
 
+
 def start_jwt(app):
     from user.auth import authenticate, identity
     JWT(app, authenticate, identity)
 
+
 def set_config(app):
     app.config.from_object(Config())
+
 
 def create_app():
     app = Flask(__name__)

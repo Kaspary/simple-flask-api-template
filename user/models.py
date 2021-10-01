@@ -5,6 +5,7 @@ from sqlalchemy import Column, Integer, String, DateTime, Boolean
 from sqlalchemy.orm import validates
 from database import BaseModel
 
+
 @dataclass
 class User(BaseModel):
 

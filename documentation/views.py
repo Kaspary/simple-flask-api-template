@@ -2,6 +2,7 @@ import json
 from flask import jsonify, render_template
 from documentation import app
 
+
 @app.route('', methods=['GET'])
 def get_html_documentation():
     return render_template('index.html')

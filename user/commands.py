@@ -6,6 +6,7 @@ from user.models import User
 from database import db_session
 from utils import datetime_as_string
 
+
 @app.cli.command('create')
 @click.argument('username')
 @click.option('--admin', default=False, is_flag=True, help='This flag mark user as admin')

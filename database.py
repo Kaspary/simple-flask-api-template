@@ -6,8 +6,8 @@ from sqlalchemy.engine import Engine
 from flask import current_app
 from flask.cli import AppGroup
 
-engine = create_engine(current_app.config['SQLALCHEMY_DATABASE_URI'])
 
+engine = create_engine(current_app.config['SQLALCHEMY_DATABASE_URI'])
 db_session = scoped_session(
     sessionmaker(
         autocommit=False,
@@ -19,6 +19,9 @@ db_session = scoped_session(
 BaseModel = declarative_base()
 BaseModel.query = db_session.query_property()
 
+database_cli = AppGroup('db')
+current_app.cli.add_command(database_cli)
+
 @event.listens_for(Engine, "connect")
 def set_sqlite_pragma(dbapi_connection, connection_record):
     if isinstance(dbapi_connection, sqlite3.Connection):
@@ -26,9 +29,11 @@ def set_sqlite_pragma(dbapi_connection, connection_record):
         cursor.execute("PRAGMA journal_mode=wal")
         cursor.close()
 
+
 @current_app.teardown_appcontext
 def shutdown_session(exception=None):
     db_session.remove()
+
 
 def init_db():
     # import all modules here that might define models so that
@@ -38,11 +43,8 @@ def init_db():
     BaseModel.metadata.create_all(bind=engine)
 
 
-database_cli = AppGroup('db')
 
 @database_cli.command('init')
 def init_db_command():
     """Init db"""
     init_db()
-
-current_app.cli.add_command(database_cli)
