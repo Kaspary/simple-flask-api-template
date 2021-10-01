@@ -3,7 +3,6 @@ import secrets
 from getpass import getpass
 from user import app
 from user.models import User
-from flask.cli import AppGroup
 from database import db_session
 
 @app.cli.command('create')

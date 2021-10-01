@@ -1,4 +1,4 @@
-from flask import Flask, Response
+from flask import Flask
 from flask.config import Config
 from flask_jwt import JWT
 from config import Config

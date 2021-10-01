@@ -1,5 +1,5 @@
 import json
-from flask import jsonify, render_template, send_from_directory
+from flask import jsonify, render_template
 from documentation import app
 
 @app.route('', methods=['GET'])
