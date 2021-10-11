@@ -102,7 +102,7 @@ Access API on `http://127.0.0.1:5000`.
 
 ### Using API
 To understed how to using the API, access `http://127.0.0.1:5000/documentation`.
-A postman collection is accessible on `http://127.0.0.1:5000/documentation/postman`.
+Postman collection is accessible on `http://127.0.0.1:5000/documentation/postman`.
 
 
 #### Documentation
