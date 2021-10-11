@@ -18,31 +18,31 @@ Simple Rest API flask template, to start build API.
 
 1. Cloning this repository.
     ```sh
-    git clone https://github.com/Kaspary/simple-flask-api-template.git
+    $ git clone https://github.com/Kaspary/simple-flask-api-template.git
     ```
 
 2. Creating and activate a python virtual environment, with your favorite tool.
     ```sh
-    virtualenv env && source env/bin/activate
+    $ virtualenv env && source env/bin/activate
     ```
 
 3. Install all dependencies.
     ```sh
-    pip install -r requirements.txt
+    $ pip install -r requirements.txt
     ```
 
 4. Creating a file named `.env`, into the project (using `example.env` as example).
 
 5. Run project
     ```sh
-    flask run
+    $ flask run
     ```
 
 ### Database migration
 
 1. Run migration to create database schema.
     ```sh
-    flask db init
+    $ flask db init
     ```
 ## Usage
 ### User cli manager
@@ -51,52 +51,52 @@ Simple Rest API flask template, to start build API.
 - **flask user create**: Create new user;
 Examples:
     ```sh
-    flask user create my_user
+    $ flask user create my_user
     ```
     ```sh
-    flask user create my_admin_user --admin
+    $ flask user create my_admin_user --admin
     ```
     ```sh
-    flask user create my_new_user --auto-pass
+    $ flask user create my_new_user --auto-pass
     ```
 - **flask user list**: List all users:
-Example:
+    - Example:
     ```sh
-    flask user list
+    $ flask user list
     ```
 - **flask user delete**: Delete a user by id;
-Example:
+    - Example:
     ```sh
-    flask user delete 1
+    $ flask user delete 1
     ```
 - **flask user activation**: Set a user as active by id;
-Example:
+    - Example:
     ```sh
-    flask user activation 1
+    $ flask user activation 1
     ```
 - **flask user newpassword**: Set new password to user by id.
-Example:
+    - Example:
     ```sh
-    flask user newpassword 1
+    $ flask user newpassword 1
     ```
     ```sh
-    flask user newpassword 1 --auto-pass
+    $ flask user newpassword 1 --auto-pass
     ```
 
 #### Flags
 - `--admin`: Set user as admin on `create` command;
     ```sh
-    flask user create my_user --admin
+    $ flask user create my_user --admin
     ```
 - `--auto-pass`: Using to generete a random pass on `newpassword` or `create` command.
     ```sh
-    flask user create my_user --auto-pass
+    $ flask user create my_user --auto-pass
     ```
 
 ### Run project
 After instalation, run this command:
 ```sh
-flask run
+$ flask run
 ```
 Access API on `http://127.0.0.1:5000`.
 
