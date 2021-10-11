@@ -106,6 +106,6 @@ A postman collection is accessible on `http://127.0.0.1:5000/documentation/postm
 
 
 #### Documentation
-Web Documentation is generatig using <a href="https://github.com/thedevsaddam/docgen" target="_blank">Docgen</a> project.
+Web Documentation is generatig using [Docgen](https://github.com/thedevsaddam/docgen) project.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
