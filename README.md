@@ -84,11 +84,11 @@ Examples:
     ```
 
 #### Flags
-- `--admin`: Set user as admin on `create` command;
+- **--admin**: Set user as admin on `create` command;
     ```sh
     $ flask user create my_user --admin
     ```
-- `--auto-pass`: Using to generete a random pass on `newpassword` or `create` command.
+- **--auto-pass**: Using to generete a random pass on `newpassword` or `create` command.
     ```sh
     $ flask user create my_user --auto-pass
     ```
@@ -106,6 +106,6 @@ A postman collection is accessible on `http://127.0.0.1:5000/documentation/postm
 
 
 #### Documentation
-Web Documentation is generatig using [Docgen](https://github.com/thedevsaddam/docgen) project.
+Web Documentation is generatig using <a href="https://github.com/thedevsaddam/docgen" target="_blank">Docgen</a> project.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
